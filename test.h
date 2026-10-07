@@ -4,6 +4,6 @@
 
 void test();
 int NWD(int a,int b);
-int howManyObjs(FILE *tp);
+
 #endif
 

@@ -22,23 +22,4 @@ int NWD(int a, int b)
 	}
 	return a;
 }
-int howManyObjs(FILE *tp){
-	char buffer[10];
-	if(fgets(buffer, sizeof(buffer),tp)!=NULL){
-		printf("%s", buffer);
-	}
-	int i = 2;
-	int n = 0;
-	while(buffer[i]!=';'){
-	i++;
-	}
-	int a = i-1;
-	while(i!=2){
-		
-		n+=(buffer[i-1]-'0')*power(10, a-i+1);
-		i--;
-	}
-	
-	return n;
-}
 

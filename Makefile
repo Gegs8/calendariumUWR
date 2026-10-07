@@ -10,3 +10,8 @@ LDFLAGS = -g
 main: $(OBJS)
 	gcc $(LDFLAGS) -o $@ $^
 
+clean:
+	rm -rf main $(OBJS)
+
+.PHONY: clean
+

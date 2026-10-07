@@ -1,6 +1,14 @@
 #include "test.h"
 #include <stdio.h>
+#include <stdlib.h>
 
+#include "file.h"
+
+#define DIE(...) \
+	do { \
+		fprintf(stderr, __VA_ARGS__); \
+		exit(1); \
+	} while(0);
 
 int main(int argc, char **argv) {
 	(void)argc;
@@ -17,7 +25,8 @@ int main(int argc, char **argv) {
 	test();
 	printf("%d\n", NWD(15,36));
 
-FILE *tp = fopen("table1", "r");
-int n=howManyObjs(tp);
-printf("%i", n);
+	FILE *tp = fopen("table1", "r");
+	int n=obj_num(tp);
+	if(n < 0) DIE("expected a string, a comma, and a number");
+	printf("%i", n);
 }
