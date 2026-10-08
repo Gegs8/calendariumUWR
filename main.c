@@ -22,11 +22,12 @@ int main(int argc, char **argv) {
 		int starts;
 		int ends;
 	};
-	test();
-	printf("%d\n", NWD(15,36));
+
+	
 
 	FILE *tp = fopen("table1", "r");
 	int n=obj_num(tp);
-	if(n < 0) DIE("expected a string, a comma, and a number");
+	if(n < 0) DIE("expected a string, a colon, a number, and a semicolon");
 	printf("%i", n);
+	printf("\n");
 }
